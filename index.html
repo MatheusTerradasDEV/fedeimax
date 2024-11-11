@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Curso FadeiMax Barbearia</title>
+</head>
+<body>
+    
+    <style>
+        
+        .music-disc-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-image: url('https://img.icons8.com/?size=100&id=54xeFL61aFhv&format=png&color=000000'); /* Insira o caminho da imagem do disco */
+          background-size: cover;
+          background-position: center;
+          animation: spin 3s linear infinite;
+          cursor: pointer;
+        }
+    
+        
+        .paused {
+          animation-play-state: paused;
+        }
+    
+        
+        @keyframes spin {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      </style>
+    </head>
+    <body>
+    
+      
+      <div class="music-disc-container" id="musicDisc"></div>
+    
+      
+      <audio id="audio" src="./assets/musica-site.mp" loop></audio>
+    
+      <script>
+        let isPlaying = false;
+        const audio = document.getElementById("audio");
+        const musicDisc = document.getElementById("musicDisc");
+    
+        
+        function toggleMusic() {
+          if (isPlaying) {
+            audio.pause();
+            musicDisc.classList.add("paused");
+          } else {
+            audio.play().then(() => {
+              musicDisc.classList.remove("paused");
+            }).catch(error => {
+              console.log("Autoplay bloqueado pelo navegador:", error);
+            });
+          }
+          isPlaying = !isPlaying;
+        }
+    
+        
+        document.body.addEventListener("click", (event) => {
+          toggleMusic();
+        });
+    
+        
+        window.addEventListener("load", () => {
+          audio.play().then(() => {
+            isPlaying = true;
+          }).catch(error => {
+            
+            isPlaying = false;
+            musicDisc.classList.add("paused");
+          });
+        });
+      </script>
+    
+    
+    
+    
+        
+        <section class="header">
+            <img src="./assets/logo.png" alt="Logo FM" class="logo">
+            <img src="./assets/img-header.png" class="img-header" alt="Imagem Header">
+            <div class="container">
+                <div class="subtitle">WORKSHOP</div>
+                <div class="title">FadeiMax <br>Barbearia</div>
+                <a href="#" class="btn">Saiba mais <span class="arrow">→</span></a>
+            </div>
+        </section>
+
+        <section class="fundo-content">
+          <div class="fundo secao">
+            <img class="img-secao" src="./assets/fundo-secao.jpg" alt="">
+          </div>
+        </section>
+    
+        
+        <section class="main-content">
+            <div class="text-sc2">
+            <h1>Seu futuro na barbearia em suas mãos</h1>
+            <p>Transforme sua carreira na barbearia com técnicas e habilidades práticas que farão diferença no seu atendimento. Neste workshop, você aprenderá a atender com excelência, a dominar os cortes e estilos mais atuais e a fidelizar clientes. Com aulas práticas e suporte exclusivo, esse curso foi projetado para elevar o seu nível profissional e abrir novas oportunidades de crescimento na barbearia.</p>
+        </div>
+        </section>
+
+
+        <section class="course-section">
+          <div class="background"></div>
+          <div class="content">
+              <h1>O que vou aprender no workshop FaideiMax?</h1>
+              <div class="cards">
+                  <div class="card card-left" style="animation-delay: 0.2s;">
+                      <div class="card-inner">
+                          <div class="card-front">
+                              <img src="https://img.icons8.com/?size=100&id=ledoOw5M8qvM&format=png&color=000000" alt="Ícone 1">
+                              <p>Fotografia</p>
+                          </div>
+                          <div class="card-back">
+                              <p>Aprenda a capturar os melhores ângulos e técnicas de iluminação para realçar o trabalho final.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card card-left" style="animation-delay: 0.4s;">
+                      <div class="card-inner">
+                          <div class="card-front">
+                              <img src="https://img.icons8.com/?size=100&id=F2R6V3ECtTmF&format=png&color=000000" alt="Ícone 2">
+                              <p>Edição</p>
+                          </div>
+                          <div class="card-back">
+                              <p>Dicas de edição para destacar detalhes, melhorar contraste e apresentar um visual profissional.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card card-right" style="animation-delay: 0.6s;">
+                      <div class="card-inner">
+                          <div class="card-front">
+                              <img src="https://img.icons8.com/?size=100&id=TkLekQKIjfrK&format=png&color=000000" alt="Ícone 3">
+                              <p>Planejamento</p>
+                          </div>
+                          <div class="card-back">
+                              <p>Estratégias para organizar seu trabalho e melhorar o atendimento ao cliente.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card card-right" style="animation-delay: 0.8s;">
+                      <div class="card-inner">
+                          <div class="card-front">
+                              <img src="https://img.icons8.com/?size=100&id=wOKadQVnq2xz&format=png&color=000000" alt="Ícone 4">
+                              <p>Gestão</p>
+                          </div>
+                          <div class="card-back">
+                              <p>Aprenda a gerenciar seu tempo e recursos para atender com qualidade.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card card-right" style="animation-delay: 1s;">
+                      <div class="card-inner">
+                          <div class="card-front">
+                              <img src="https://img.icons8.com/?size=100&id=ioEuPwWzh4Xm&format=png&color=000000" alt="Ícone 5">
+                              <p>Finalização de Fade</p>
+                          </div>
+                          <div class="card-back">
+                              <p>Domine a técnica de fade para cortes precisos e bem acabados.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+
+
+        <section class="certificado" id="certificado">
+          <div class="certificado-content">
+              <div class="certificado-texto">
+                  <h2>Certificação Profissional</h2>
+                  <p></p>
+                  
+              </div>
+              <div class="certificado-imagem">
+                  <img src="./assets/cerificado-1.jpg" alt="Imagem do certificado">
+              </div>
+          </div>
+      </section>
+
+
+      <section class="faq" id="faq">
+        <h2>Dúvidas Frequentes</h2>
+        <div class="faq-item">
+            <button class="faq-question">Qual é o conteúdo do Workshop FaideiMax?<span>+</span></button>
+            <div class="faq-answer">
+                <p>O workshop abrange técnicas avançadas de corte, finalização, atendimento ao cliente, fotografia e gestão de barbearia. Você sairá com habilidades práticas e teóricas para aplicar no seu trabalho.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">O certificado é reconhecido?<span>+</span></button>
+            <div class="faq-answer">
+                <p>Sim, o certificado emitido pelo Workshop FaideiMax é reconhecido e pode agregar valor ao seu currículo e aumentar a credibilidade junto aos clientes.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">Preciso de experiência prévia?<span>+</span></button>
+            <div class="faq-answer">
+                <p>Não, o workshop é projetado para todos os níveis de experiência, desde iniciantes até profissionais que desejam aprimorar suas técnicas.</p>
+            </div>
+        </div>
+        
+    </section>
+    
+      
+      
+      
+   <script src="script.js"></script>
+    
+</body>
+</html>

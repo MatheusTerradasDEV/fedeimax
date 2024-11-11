@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiny5&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; 
+}
+
+
+.header {
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; 
+    
+}
+
+
+.logo {
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    z-index: 2;
+}
+
+
+.container {
+    margin-top: 20vh;
+    max-width: 500px;
+    margin-left: 250px;
+    z-index: 2;
+}
+
+.subtitle, .title {
+    font-size: 5.2rem;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    background: linear-gradient(45deg, #00aaff, #0056b3); -webkit-background-clip: text;
+    color: transparent; 
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+}
+
+.title {
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: linear-gradient(45deg, #00aaff, #0056b3);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn .arrow {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+
+.img-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+
+.main-content {
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: -10vh; 
+}
+
+
+.main-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+}
+
+.main-content p {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-top: 40px;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* section - o que eu vou aprender */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Poppins", serif;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+}
+
+p{
+    font-family: "Poppins", serif;
+    text-align: center;
+}
+
+.card {
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 15vh;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #00b4ff;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.card-back {
+    background-color: #1c1c1c;
+    color: #d1d1d1;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 10px;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 150px;
+        height: 200px;
+        margin-bottom: 5vh;
+    }
+
+    .card-front, .card-back {
+        font-size: 0.9em;
+    }
+}
+
+
+/* fim section - o que eu vou aprender */
+
+
+/* section - certificado */
+
+.certificado {
+    background-color: black;
+    padding: 80px 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.certificado-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    
+}
+
+.certificado-texto, .certificado-imagem {
+    flex: 1;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.certificado-texto {
+    animation-delay: 0.3s;
+}
+
+.certificado-imagem {
+    transform: translateX(50px);
+}
+
+.certificado h2 {
+    font-size: 2.8em;
+    color: #0058f1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.certificado-imagem img {
+    max-width: 90%;
+   
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #00b4ff;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #008ecc;
+}
+
+
+@media (max-width: 768px) {
+    .certificado-content {
+        width: 100%;
+        margin-top: 5vh;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .certificado-texto,
+    .certificado-imagem {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .certificado-texto {
+        transform: translateY(20px); 
+    }
+
+    .certificado-imagem {
+        transform: translateY(20px); 
+    }
+}
+
+/* fim section - certificado */
+
+/* section - duvidas */
+.faq {
+    background-color: black;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2.5em;
+    color: #0058f1;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #0058f1;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.2em;
+    text-align: left;
+    background-color: #121212;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #1c1c1c;
+}
+
+.faq-question span {
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    background-color: #1c1c1c;
+    padding: 0 20px;
+}
+
+.faq-answer p {
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 0;
+    font-size: 1em;
+    color: #d1d1d1;
+}
+
+
+@media (max-width: 768px) {
+    .faq h2 {
+        font-size: 2em;
+    }
+
+    .faq-question {
+        font-size: 1.1em;
+    }
+}
+
+/* fim section - duvidas */
+
+
+@media (max-width: 768px) {
+    .container {
+        margin-left: 20px;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .subtitle, .title {
+        font-size: 3rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .img-header {
+        width: 50%;
+        opacity: 0.5;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .logo {
+        
+    }
+
+    .container {
+        align-items: center;
+    }
+
+    .subtitle, .title {
+        font-size: 3.7rem;
+        width: 100%;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+
+    
+    .img-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    
+    .container, .logo {
+        z-index: 2;
+        position: relative;
+    }
+
+    .main-content h1{
+        font-size: 2rem;
+    }
+
+    .main-content p{
+        margin-top: 20px;
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+
+
+/* Disco */
+.disco {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.disco:hover {
+    background-color: #45a049;
+}
+
+.disco .play {
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/?size=100&id=398&format=png&color=000000') no-repeat center center;
+    background-size: contain;
+}
+
+.disco .pause {
+    width: 30px;
+    height: 30px;
+    background: url('https://img.icons8.com/?size=100&id=403&format=png&color=000000pause-icon.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.spinning {
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+.img-secao{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
