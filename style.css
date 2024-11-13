@@ -315,7 +315,7 @@ p{
     text-align: center;
     gap: 50px;
     margin-top: 15vh;
-    margin-bottom: 10vh;
+    margin-bottom: 1vh;
 }
 
 
@@ -490,6 +490,10 @@ p{
     .container, .logo {
         z-index: 2;
         position: relative;
+    }
+
+    .main-content {
+        margin-top: -10vh;
     }
 
     .main-content h1{
